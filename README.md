@@ -1,7 +1,8 @@
 # Medda Systems Homebrew tap
 
 ```sh
-brew install --cask medda-systems/tap/opentraffic
+brew tap medda-systems/tap
+brew install --cask opentraffic
 ```
 
 | Cask | |
