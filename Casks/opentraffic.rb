@@ -1,6 +1,6 @@
 cask "opentraffic" do
-  version "1.0.3"
-  sha256 "5f931d3aafc8c9e50f6e6a095e2d476347c9881dce64a8a7a395f49472631377"
+  version "1.0.4"
+  sha256 "944c36314fdaba8d516bdd5fd238e1b3402407ff0138679fe4d6b8b46787652f"
 
   url "https://github.com/Medda-systems/OpenTraffic-releases/releases/download/v#{version}/OpenTraffic-#{version}.dmg"
   name "OpenTraffic"
@@ -16,6 +16,16 @@ cask "opentraffic" do
   depends_on macos: :sonoma
 
   app "OpenTraffic.app"
+
+  # OpenTraffic links its `opentraffic` command into your PATH when it starts; take that link away
+  # with the app (only a link to an OpenTraffic.app, never a file of yours).
+  uninstall_postflight do
+    ["#{HOMEBREW_PREFIX}/bin/opentraffic", "/usr/local/bin/opentraffic", "#{Dir.home}/.local/bin/opentraffic"].uniq.each do |link|
+      next unless File.symlink?(link) && File.readlink(link).end_with?(".app/Contents/Resources/opentraffic")
+
+      File.delete(link)
+    end
+  end
 
   zap trash: [
     "~/Library/Application Support/OpenTraffic",
