@@ -1,6 +1,6 @@
 cask "opentraffic" do
-  version "1.0.4"
-  sha256 "944c36314fdaba8d516bdd5fd238e1b3402407ff0138679fe4d6b8b46787652f"
+  version "1.0.5"
+  sha256 "b1c9201132c1c863f7ec56256a342ffb7345dd27fe64da5fed0197b5b39b8c4a"
 
   url "https://github.com/Medda-systems/OpenTraffic-releases/releases/download/v#{version}/OpenTraffic-#{version}.dmg"
   name "OpenTraffic"
@@ -33,9 +33,4 @@ cask "opentraffic" do
     "~/Library/HTTPStorages/se.medda.opentraffic",
     "~/Library/Preferences/se.medda.opentraffic.plist",
   ]
-
-  caveats <<~EOS
-    OpenTraffic isn't notarized yet. The first time you open it, macOS blocks it:
-    open System Settings → Privacy & Security and click "Open Anyway".
-  EOS
 end
