@@ -1,6 +1,6 @@
 cask "opentraffic" do
-  version "1.0.12"
-  sha256 "969fea4b64595f06ab8e4b8254411715ee55d95d61280a1b6c9760ccc3a8c771"
+  version "1.0.13"
+  sha256 "d2d7fd4cfd1b2110ad871a19f332c94ce160e2a81c690de51f9982d400a98a2b"
 
   url "https://github.com/Medda-systems/OpenTraffic-releases/releases/download/v#{version}/OpenTraffic-#{version}.dmg"
   name "OpenTraffic"
